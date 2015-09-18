@@ -38,3 +38,11 @@ describe("calculatePrice", function() {
     expect(testPizza.calculatePrice()).to.equal(9);
   })
 })
+
+describe("calculateTotalPrice", function() {
+  it("calculate all Prices from different types of pizza", function() {
+    var testPizza = new Pizza(1,1,"XXL");
+    var testPizza = new Pizza (1,1, "small");
+    expect(testPizza.calculateTotalPrice()).to.equal(11);
+  })
+})
