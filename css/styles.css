@@ -1,16 +1,16 @@
-#result {
+#orders {
   display: none;
 }
 
-#show-contact {
+#show-order {
   display: none;
 }
 
-.contact {
+.order {
   cursor: pointer;
   color: #0088cc;
 }
 
-.contact:hover {
+.order:hover {
   text-decoration: underline;
 }

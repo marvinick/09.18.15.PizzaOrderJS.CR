@@ -1,8 +1,13 @@
-function Pizza(quantity, topping, spec) {
+function Pizza(orderName, quantity, topping, spec) {
+  this.orderName = orderName;
   this.quantity = quantity;
   this.topping = topping;
   this.spec = spec;
   this.pizzas = [];
+}
+
+Pizza.prototype.orderName = function() {
+  return this.orderName;
 }
 
 Pizza.prototype.calculatePrice = function() {
@@ -24,38 +29,38 @@ Pizza.prototype.calculatePrice = function() {
     var totalPrice = (price * this.topping) + 7 ;
     return totalPrice;
   }
+  var pizzas = [];
+  pizzas.push(totalPrice);
+  eval(pizzas.join('+'));
+  return pizzas;
 };
 
-Pizza.prototype.calculateTotalPrice = function() {
-  this.calculatePrice();
-};
 
+// function resetFields() {
+//     $("input#new-first-name").val("");
+//     $("input#new-last-name").val("");
+//     $("input.new-street").val("");
+//     $("input.new-city").val("");
+//     $("input.new-state").val("");
+// }
+$(document).ready(function() {
+  $("form#new-pizza").submit(function(event) {
+      event.preventDefault();
 
-function resetFields() {
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input.new-street").val("");
-    $("input.new-city").val("");
-    $("input.new-state").val("");
-}
+      var inputtedOrderName = $("input#new-order-name").val();
+      var inputtedQuantity = $("input#new-quantity").val();
+      var inputtedTopping = $("input#new-topping").val();
+      var inputtedSize = $("input#new-spec").val();
 
-// $(document).ready(function() {
-//   $("#add-address").click(function() {
-//     $("#new-addresses").append('<div class="new-address">' +
-//                                  '<div class="form-group">' +
-//                                    '<label for="new-street">Street</label>' +
-//                                    '<input type="text" class="form-control new-street">' +
-//                                  '</div>' +
-//                                  '<div class="form-group">' +
-//                                    '<label for="new-city">City</label>' +
-//                                    '<input type="text" class="form-control new-city">' +
-//                                  '</div>' +
-//                                  '<div class="form-group">' +
-//                                    '<label for="new-state">State</label>' +
-//                                    '<input type="text" class="form-control new-state">' +
-//                                  '</div>' +
-//                                '</div>');
-// });
+      var newPizza = new Pizza (inputtedQuantity, inputtedTopping, inputtedSize);
+
+      $("ul#pizzas").append("<li><span class='pizza'>" + inputtedOrderName + "</span></li>");
+
+      $("input#new-quantity").val("");
+      $("input#new-topping").val("");
+      $("input#new-spec").val("");
+    });
+});
 
 // $("form#new-contact").submit(function(event) {
 //     event.preventDefault();
