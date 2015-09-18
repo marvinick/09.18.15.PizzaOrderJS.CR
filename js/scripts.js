@@ -26,6 +26,11 @@ Pizza.prototype.calculatePrice = function() {
   }
 };
 
+Pizza.prototype.calculateTotalPrice = function() {
+  this.calculatePrice();
+};
+
+
 function resetFields() {
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
