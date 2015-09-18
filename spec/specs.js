@@ -19,10 +19,10 @@ describe("calculatePrice", function() {
     expect(testPizza.calculatePrice()).to.equal(4);
   })
 
-  // it("extra $1 for adding topping", function() {
-  //   var testPizza = new Pizza(1, 2, "small");
-  //   expect(testPizza.calculatePrice()).to.equal(4);
-  // })
+  it("extra $1 for adding topping", function() {
+    var testPizza = new Pizza(1, 2, "small");
+    expect(testPizza.calculatePrice()).to.equal(4);
+  })
   //
   // it("extra $1.50 for size medium", function() {
   //   var testPizza = new Pizza(1, 1, "medium");
