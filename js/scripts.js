@@ -3,7 +3,7 @@ function Pizza(orderName, quantity, topping, spec) {
   this.quantity = quantity;
   this.topping = topping;
   this.spec = spec;
-  this.pizzas = [];
+
 }
 
 Pizza.prototype.calculatePrice = function() {
@@ -43,6 +43,7 @@ $(document).ready(function() {
     var inputtedSize = $("select#sizeDropDown :selected").val();
 
     var newPizza = new Pizza (inputtedOrderName, inputtedQuantity, inputtedTopping, inputtedSize);
+    var orderPrice = newPizza.calculatePrice();
 
     $("ul#pizzas").append("<li><span class='pizza'>" + inputtedOrderName + "</span></li>");
 
@@ -53,7 +54,7 @@ $(document).ready(function() {
       $(".quantity").text(inputtedQuantity);
       $(".topping").text(inputtedTopping);
       $(".spec").text(inputtedSize);
-      $("#price").text(newPizza.calculatePrice());
+      $("#price").text(orderPrice);
     });
   resetForm();
   });
