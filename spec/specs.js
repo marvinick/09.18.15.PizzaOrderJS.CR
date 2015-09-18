@@ -33,9 +33,9 @@ describe("calculatePrice", function() {
     var testPizza = new Pizza(1, 1, "large");
     expect(testPizza.calculatePrice()).to.equal(6);
   })
-  // it("extra $7 for size XXL", function() {
-  //   var testPizza = new Pizza(1, 1, "XXL");
-  //   expect(testPizza.calculatePrice()).to.equal(9);
-  // })
+  it("extra $7 for size XXL", function() {
+    var testPizza = new Pizza(1, 1, "XXL");
+    expect(testPizza.calculatePrice()).to.equal(9);
+  })
 
 })
