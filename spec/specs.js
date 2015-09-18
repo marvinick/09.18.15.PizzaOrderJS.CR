@@ -23,11 +23,11 @@ describe("calculatePrice", function() {
     var testPizza = new Pizza(1, 2, "small");
     expect(testPizza.calculatePrice()).to.equal(4);
   })
-  //
-  // it("extra $1.50 for size medium", function() {
-  //   var testPizza = new Pizza(1, 1, "medium");
-  //   expect(testPizza.calculatePrice()).to.equal(3.50);
-  // })
+
+  it("extra $1.50 for size medium", function() {
+    var testPizza = new Pizza(1, 1, "medium");
+    expect(testPizza.calculatePrice()).to.equal(3.50);
+  })
   //
   // it("extra $4 for size large", function() {
   //   var testPizza = new Pizza(1, 1, "large");
