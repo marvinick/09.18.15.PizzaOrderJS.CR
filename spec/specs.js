@@ -38,12 +38,6 @@ describe("calculatePrice", function() {
     var testPizza = new Pizza("merv", 1, 1, "XXL");
     expect(testPizza.calculatePrice()).to.equal(9);
   })
-
-  // it("calculate all Prices from different types of pizza", function() {
-  //   var testPizza = new Pizza(1,1,4);
-  //   var testPizza = new Pizza(2,1,1);
-  //   expect(testPizza.calculatePrice()).to.equal([11]);
-  // })
 })
 
 

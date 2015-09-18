@@ -6,14 +6,9 @@ function Pizza(orderName, quantity, topping, spec) {
   this.pizzas = [];
 }
 
-Pizza.prototype.orderName = function() {
-  return this.orderName;
-}
-
 Pizza.prototype.calculatePrice = function() {
   var quantity = 1;
   var topping = 1;
-  var spec = "small";
   var price = 2;
 
   if (this.quantity >= 1 && this.topping >= 1 && this.spec == "small")  {
@@ -29,20 +24,15 @@ Pizza.prototype.calculatePrice = function() {
     var totalPrice = (price * this.topping) + 7 ;
     return totalPrice;
   }
-  var pizzas = [];
-  pizzas.push(totalPrice);
-  eval(pizzas.join('+'));
-  return pizzas;
 };
 
+function resetForm() {
+    $("input#new-order-name").val("");
+    $("input#new-quantity").val("");
+    $("input#new-topping").val("");
+    $("select#sizeDropDown").val("");
+}
 
-// function resetFields() {
-//     $("input#new-first-name").val("");
-//     $("input#new-last-name").val("");
-//     $("input.new-street").val("");
-//     $("input.new-city").val("");
-//     $("input.new-state").val("");
-// }
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
@@ -63,44 +53,8 @@ $(document).ready(function() {
       $(".quantity").text(inputtedQuantity);
       $(".topping").text(inputtedTopping);
       $(".spec").text(inputtedSize);
+      $("#price").text(newPizza.calculatePrice());
     });
+  resetForm();
   });
 });
-
-// $("form#new-contact").submit(function(event) {
-//     event.preventDefault();
-
-//     var inputtedFirstName = $("input#new-first-name").val();
-//     var inputtedLastName = $("input#new-last-name").val();
-
-//     var newContact = new Contact(inputtedFirstName, inputtedLastName);
-
-//     $(".new-address").each(function() {
-//       var inputtedStreet = $(this).find("input.new-street").val();
-//       var inputtedCity = $(this).find("input.new-city").val();
-//       var inputtedState = $(this).find("input.new-state").val();
-
-//       var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState)
-//       newContact.addresses.push(newAddress);
-//     });
-
-
-//     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
-
-//     $(".contact").last().click(function() {
-//       $("#show-contact").show();
-
-//       $("#show-contact h2").text(newContact.fullName());
-//       $(".first-name").text(newContact.firstName);
-//       $(".last-name").text(newContact.lastName);
-
-//       $("ul#addresses").text("");
-
-//       newContact.addresses.forEach(function(address) {
-//         $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
-//       });
-//     });
-
-//     resetFields()
-//   });
-// });
