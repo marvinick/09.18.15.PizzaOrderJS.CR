@@ -5,26 +5,26 @@ function Pizza(quantity, topping, spec) {
   this.pizzas = [];
 }
 
+Pizza.prototype.calculatePrice = function() {
+  var quantity = 1;
+  var topping = 1;
+  var spec = "small";
+  var price = 2;
 
-// function Contact(firstName,lastName){
-//   this.firstName = firstName;
-//   this.lastName = lastName;
-//   this.addresses = [];
-// }
-
-// Contact.prototype.fullName = function() {
-//   return this.firstName + " " + this.lastName;
-// }
-
-// function Address(street, city, state) {
-//   this.street = street;
-//   this.city = city;
-//   this.state = state;
-// }
-
-// Address.prototype.fullAddress = function() {
-//   return this.street + ", " + this.city + ", " + this.state;
-// }
+  if (this.quantity >= 1 && this.topping >= 1 && this.spec == "small")  {
+    var totalPrice = price * this.quantity * this.topping;
+    return totalPrice;
+  } else if (this.quantity >= 1 && this.topping >= 1 && this.spec == "medium") {
+    var totalPrice = (price * this.topping) + 1.50;
+    return totalPrice;
+  } else if (this.quantity >= 1 && this.topping >= 1 && this.spec == "large") {
+    var totalPrice = (price * this.topping) + 4;
+    return totalPrice;
+  } else if (this.quantity >= 1 && this.topping >= 1 && this.spec == "XXL") {
+    var totalPrice = (price * this.topping) + 7 ;
+    return totalPrice;
+  }
+};
 
 // function resetFields() {
 //     $("input#new-first-name").val("");
