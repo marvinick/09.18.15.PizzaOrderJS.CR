@@ -45,21 +45,26 @@ Pizza.prototype.calculatePrice = function() {
 // }
 $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
-      event.preventDefault();
+    event.preventDefault();
 
-      var inputtedOrderName = $("input#new-order-name").val();
-      var inputtedQuantity = $("input#new-quantity").val();
-      var inputtedTopping = $("input#new-topping").val();
-      var inputtedSize = $("input#new-spec").val();
+    var inputtedOrderName = $("input#new-order-name").val();
+    var inputtedQuantity = $("input#new-quantity").val();
+    var inputtedTopping = $("input#new-topping").val();
+    var inputtedSize = $("select#sizeDropDown :selected").val();
 
-      var newPizza = new Pizza (inputtedQuantity, inputtedTopping, inputtedSize);
+    var newPizza = new Pizza (inputtedOrderName, inputtedQuantity, inputtedTopping, inputtedSize);
 
-      $("ul#pizzas").append("<li><span class='pizza'>" + inputtedOrderName + "</span></li>");
+    $("ul#pizzas").append("<li><span class='pizza'>" + inputtedOrderName + "</span></li>");
 
-      $("input#new-quantity").val("");
-      $("input#new-topping").val("");
-      $("input#new-spec").val("");
+    $(".pizza").last().click(function() {
+      $("#show-order").show();
+
+      $("#show-order h3").text(inputtedOrderName);
+      $(".quantity").text(inputtedQuantity);
+      $(".topping").text(inputtedTopping);
+      $(".spec").text(inputtedSize);
     });
+  });
 });
 
 // $("form#new-contact").submit(function(event) {

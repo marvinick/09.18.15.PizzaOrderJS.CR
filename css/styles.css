@@ -1,4 +1,4 @@
-#orders {
+#result {
   display: none;
 }
 
@@ -6,11 +6,11 @@
   display: none;
 }
 
-.order {
+.pizza {
   cursor: pointer;
   color: #0088cc;
 }
 
-.order:hover {
+.pizza:hover {
   text-decoration: underline;
 }
