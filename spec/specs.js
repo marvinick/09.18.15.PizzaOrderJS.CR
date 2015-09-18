@@ -37,5 +37,4 @@ describe("calculatePrice", function() {
     var testPizza = new Pizza(1, 1, "XXL");
     expect(testPizza.calculatePrice()).to.equal(9);
   })
-
 })
