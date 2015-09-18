@@ -1,3 +1,11 @@
+function Pizza(quantity, topping, spec) {
+  this.quantity = quantity;
+  this.topping = topping;
+  this.spec = spec;
+  this.pizzas = [];
+}
+
+
 // function Contact(firstName,lastName){
 //   this.firstName = firstName;
 //   this.lastName = lastName;
